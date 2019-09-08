@@ -1,0 +1,31 @@
+﻿@using MyFirstWebSite.Models
+@model List<Customers>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table style="width:100%">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Phone Number</th>
+        <th>#</th>
+    </tr>
+    @for (var index = 0; index < Model.Count; index++)
+    {
+        <tr>
+            <td>@Model[index].Name</td>
+            <td>@Model[index].Surname</td>
+            <td>@Model[index].Phone</td>
+            <td>
+                <a href="@Url.Action("Update", "Customers", new { id = Model[index].Id })">Edit</a>&nbsp;
+                <a href="@Url.Action("Delete", "Customers", new { id = Model[index].Id })">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<br/>
+<a href="@Url.Action("Add", "Customers")">Create New Customer</a>
+
+

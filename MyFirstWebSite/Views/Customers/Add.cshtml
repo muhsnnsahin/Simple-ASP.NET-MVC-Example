@@ -1,0 +1,41 @@
+﻿@model MyFirstWebSite.Models.Customers
+
+@{
+    ViewBag.Title = "Add";
+}
+
+@using (Html.BeginForm("Add", "Customers", FormMethod.Post))
+{
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="2" align="center">Customer Details</th><br />
+        </tr>
+        <tr>
+            <td>Name:&nbsp; </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>Surname:&nbsp; </td>
+            <td>
+                @Html.TextBoxFor(m => m.Surname)
+            </td>
+        </tr>
+        <tr>
+            <td>Phone Number:&nbsp; </td>
+            <td>
+                @Html.TextBoxFor(m => m.Phone)
+            </td>
+        </tr>
+        <tr>
+            <td><br /></td>
+            <td><br/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save"/></td>
+        </tr>
+    </table>
+}
+

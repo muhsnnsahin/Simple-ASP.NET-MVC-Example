@@ -1,0 +1,42 @@
+﻿@model MyFirstWebSite.Models.Customers
+
+@{
+    ViewBag.Title = "Update";
+}
+
+@using (Html.BeginForm("Update", "Customers", FormMethod.Post, new { Id = Model.Id}))
+{
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="2" align="center">Update Customer Details</th>
+            <br />
+        </tr>
+        <tr>
+            <td>Name:&nbsp; </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name, new { Value = Model.Name })
+            </td>
+        </tr>
+        <tr>
+            <td>Surname:&nbsp; </td>
+            <td>
+                @Html.TextBoxFor(m => m.Surname, new { Value = Model.Surname })
+            </td>
+        </tr>
+        <tr>
+            <td>Phone Number:&nbsp; </td>
+            <td>
+                @Html.TextBoxFor(m => m.Phone, new { Value = Model.Phone })
+            </td>
+        </tr>
+        <tr>
+            <td><br /></td>
+            <td><br /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save" /></td>
+        </tr>
+    </table>
+}
+
